@@ -14,9 +14,6 @@ var fs = require("fs");
 var express = require("express");
 var router = express.Router();
 
-module.exports = router;
-
-
 const okHosts = ['http://localhost:3000']
 const corsOptions = {
   origin: function (origin, callback) {
@@ -58,19 +55,25 @@ console.log('server running');
 // Stripe
 app.post('/api/charge', async function (req, res) {
   const { id, amount } = req.body;
-    console.log(req.body);
+  console.log(req.body);
 
-    const payment = await stripe.paymentIntents.create({
-      amount: amount,
-      currency: "USD",
-      description: "Monthly Subscription",
-      payment_method: id,
-      confirm: true,
-    });
-    console.log(payment);
-    
-    return res.status(200).json({
-      confirm: "Payment received",
-    });
+  const payment = await stripe.paymentIntents.create({
+    amount: amount,
+    currency: "USD",
+    description: "Monthly Subscription",
+    payment_method: id,
+    confirm: true,
+  });
+  console.log(payment);
+
+  return res.status(200).json({
+    confirm: "Payment received",
+  });
 
 });
+
+module.exports = router;
+
+app.get("/", (req, res) => {
+  res.send("hello world!")
+})
