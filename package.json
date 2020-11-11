@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npm dev",
     "build": "npm build",
-    "start": "npm start"
+    "start": "node server.js"
   },
   "dependencies": {
     "@stripe/react-stripe-js": "^1.1.2",
