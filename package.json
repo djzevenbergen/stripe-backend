@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "npm dev",
+    "build": "npm build",
+    "start": "npm start"
   },
   "dependencies": {
     "@stripe/react-stripe-js": "^1.1.2",
@@ -13,8 +13,8 @@
     "axios": "^0.21.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "next": "10.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "stripe": "^8.121.0"
