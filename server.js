@@ -35,9 +35,7 @@ app.listen(port, function (err) {
   }
 });
 
-
 console.log('server running');
-
 // Stripe
 app.post('/api/charge', async function (req, res) {
   const { id, amount } = req.body;
